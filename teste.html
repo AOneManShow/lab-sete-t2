@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <input type="text" id="meuCampo" />
+    <span id="mensagemErro"></span>
+
+    <script>
+        // Acessando o campo e a mensagem de erro
+        const campo = document.getElementById('meuCampo');
+        const mensagemErro = document.getElementById('mensagemErro');
+
+        // Função de validação
+        function validarCampo() {
+            // Obter o valor do campo
+            const valor = campo.value;
+
+            // Verificar se o valor atende aos critérios de validação
+            if (valor.length < 5) {
+                mensagemErro.textContent = 'O campo deve ter pelo menos 5 caracteres.';
+            } else {
+                mensagemErro.textContent = '';
+            }
+        }
+
+        // Adicionar um evento de digitação ao campo
+        campo.addEventListener('input', validarCampo);
+
+    </script>
+</body>
+
+</html>
