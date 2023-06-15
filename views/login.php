@@ -1,14 +1,17 @@
+<?php
+include 'constantes/constantes.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-Br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tela Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../content/css/custom/estilo.css">
-    <title>Tela Login</title>
+    <link rel="stylesheet" href="<?php echo $GLOBALS['nomeDoProjecto'].'/content/css/custom/estilo.css' ?>">
 </head>
 
 <body class="bg-verde-pastoso">
@@ -19,7 +22,6 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
-
                             <div class="mb-md-5 mt-md-4 pb-5">
                                 <form method="post">
                                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>

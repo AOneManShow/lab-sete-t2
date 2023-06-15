@@ -126,6 +126,9 @@ class MainController {
     }
 
     public function login(){
+        //para mudar a url, o redirect funciona, mas por algum motivo, não dá muito certo no form
+        //$this->redirect('views/login.php');
+
         //aqui em cima, pego da tela de login, o email, username e password
         $email = '';
         $userN = '';
@@ -160,7 +163,7 @@ class MainController {
                 $errors = $e->getErrors();
             }
         }
-        include dirname(__DIR__, 1).'/view/login.php';
+        include dirname(__DIR__, 1).'/views/login.php';
     }
 
     public function showError($title, $message) {

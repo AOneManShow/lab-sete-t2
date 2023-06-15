@@ -1,6 +1,6 @@
 <?php
 //include_once './session/session.php';
-include_once('./model/Utilizador.php');
+include_once('./models/Utilizador.php');
 include_once('./dbconfig/DbConnection.php');
 
 class UtilizadoresRepository
