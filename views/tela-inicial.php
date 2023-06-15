@@ -9,7 +9,7 @@ include_once '../constantes/constantes.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tela Inicial</title>
-    
+
     <!--Inter UI font-->
     <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
 
@@ -76,9 +76,9 @@ include_once '../constantes/constantes.php';
                         pages in minutes. Inscreva-se gratuitamente.</p>
                     <a href="<?= $GLOBALS['nomeDoProjecto'] . '/index.php?op=registar'; ?>">
                         <button class="btn btn-primary d-inline-flex flex-row align-items-center">
-                        Increver-se agora
-                        <em class="ml-2" data-feather="arrow-right"></em>
-                    </button>
+                            Increver-se agora
+                            <em class="ml-2" data-feather="arrow-right"></em>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -465,12 +465,12 @@ include_once '../constantes/constantes.php';
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS 
 -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script type="text/javascript" src="../scripts/custom/scriptTelaInicial.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="../scripts/custom/scriptTelaInicial.js"></script>
 
 </body>
 

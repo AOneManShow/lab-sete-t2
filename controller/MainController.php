@@ -167,7 +167,7 @@ class MainController {
     }
 
     public function showError($title, $message) {
-        include '../view/error.php';
+        include './views/error.php';
     }
 }
 
