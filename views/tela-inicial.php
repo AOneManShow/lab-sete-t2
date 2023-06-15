@@ -74,10 +74,12 @@ include_once '../constantes/constantes.php';
                     <p class="lead py-3">Knight is a platform that helps freelancers and companies build beautiful
                         landing
                         pages in minutes. Inscreva-se gratuitamente.</p>
-                    <button class="btn btn-primary d-inline-flex flex-row align-items-center">
+                    <a href="<?= $GLOBALS['nomeDoProjecto'] . '/index.php?op=registar'; ?>">
+                        <button class="btn btn-primary d-inline-flex flex-row align-items-center">
                         Increver-se agora
                         <em class="ml-2" data-feather="arrow-right"></em>
                     </button>
+                    </a>
                 </div>
             </div>
         </div>

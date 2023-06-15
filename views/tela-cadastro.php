@@ -1,3 +1,7 @@
+<?php
+include_once './constantes/constantes.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -7,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../content/css/custom/estilo.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['nomeDoProjecto'] . '/content/css/custom/estilo.css'; ?>">
     <title>Tela Cadastro</title>
 </head>
 
@@ -62,7 +66,7 @@
         </div>
     </section>
 
-    <script src="../scripts/custom/scriptValidacaoForm.js"></script>
+    <script src="<?= $GLOBALS['nomeDoProjecto'] . '/scripts/custom/scriptValidacaoForm.js'; ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
         </script>

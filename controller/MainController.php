@@ -31,7 +31,7 @@ class MainController {
                 $this->listOutdoors();
             }*/
             else if ($op == 'registar') {
-                $this->registarCliente();
+                $this->registarUtilizador();
             }/*
             else if ($op == 'about') {
                 $this->telaAbout(); //método que traz a tela about no início
@@ -104,7 +104,7 @@ class MainController {
         $errors = array();
 
         if (isset($_POST['form-submitted'])) {
-            $nome = isset($_POST['nome']) ? filter_input(INPUT_POST, 'nome') : NULL;
+            $nome = isset($_POST['nomeCompleto']) ? filter_input(INPUT_POST, 'nomeCompleto') : NULL;
             $email = isset($_POST['email']) ? filter_input(INPUT_POST, 'email') : NULL;
             $username = isset($_POST['username']) ? filter_input(INPUT_POST, 'username') : NULL;
             $password = isset($_POST['password']) ? filter_input(INPUT_POST, 'password') : NULL;
@@ -112,7 +112,7 @@ class MainController {
             try {
                 $this->visitanteService->criarNovoUtilizador($nome, $email, $username, $password);
                 //$this->redirect('../view/admin-view/admin-home.php');
-                $caminhoAbsoluto = $GLOBALS['nomeDoProjecto']./*$nomeDoProjecto.*/'.view/cliente-view/index.php?op=loginsucesso';//&user='.$username;
+                $caminhoAbsoluto = $GLOBALS['nomeDoProjecto']./*$nomeDoProjecto.*/'/index.php?op=login';//&user='.$username;
                 
                 //depois de se cadastrar, ele loga logo sozinho, mas ao invés de ir para a tela inicial again, vou tentar que ele vá para a tela em que estava antes do cadastro
                 $this->redirect($caminhoAbsoluto);
@@ -122,11 +122,11 @@ class MainController {
             }
         }
 
-        include dirname(__DIR__, 1).'/view/inicio/signup-form.php';
+        include dirname(__DIR__, 1).'/views/tela-cadastro.php';
     }
 
     public function login(){
-        //para mudar a url, o redirect funciona, mas por algum motivo, não dá muito certo no form
+        //para mudar a url, o redirect funciona, mas por algum motivo, não dá muito certo na estilização
         //$this->redirect('views/login.php');
 
         //aqui em cima, pego da tela de login, o email, username e password

@@ -27,7 +27,7 @@ function validarSenha() {
         // Verificar se o valor atende aos critérios de validação
         if (senha !== '' && senhaConfirm !== '') {
             if (senha !== senhaConfirm) {
-                mensagemErroPass.textContent = "Esse campo precisa corresponder à senha.";
+                mensagemErroPass.textContent = "Os campos de senha precisam corresponder.";
                 codigoErro = "senha";
             }
         }/*
@@ -51,9 +51,9 @@ function validarEmail() {
 
         // Verificar se o valor atende aos critérios de validação
         if ( mail !== '' ) {
-            mensagemErroEmail.textContent = "Esse campo precisa corresponder com o padrão de um email.<br>Dica: exemplo@mail.com";
             if ( !regexEmail.test(mail) ) //retorna TRUE se corresponde, FALSE caso contrário
             {
+                mensagemErroEmail.textContent = "Esse campo precisa corresponder com o padrão de um email. Dica: exemplo@mail.com";
                 codigoErro = "email";
             }/* else {
                 mensagemErro.textContent = '';
@@ -79,8 +79,10 @@ function enviarFormulario(event) {
 }
 
 
-// Adicionar um evento de digitação ao campo
+// Adicionar eventos de digitação aos campos
+pass.addEventListener('input', validarSenha);
 passConfirm.addEventListener('input', validarSenha);
+email.addEventListener('input', validarEmail);
 // Adicionar eventos de cancelamento ao formulário, caso tenha erros
 formulario.addEventListener('submit', enviarFormulario);
 
