@@ -39,11 +39,12 @@ class MainController {
                 $this->gestTask();
             } else if ($op == 'login') {
                 $this->login();
-            } else if ($op == 'loginsucesso') {
+            }/* else if ($op == 'loginsucesso') {
                 $filterUser = filter_input(INPUT_GET, 'username');
                 $userN = isset($filterUser) ? $filterUser : NULL;
                 $this->loggado($userN);
-            } else {
+            }*/
+             else {
                 $this->showError("Page not found", "Page for operation " . $op . " was not found!");
             }
         } catch (Exception $e) {
@@ -76,11 +77,13 @@ class MainController {
         include dirname(__DIR__, 1).'/view/outdoor-view/outdoors-list.php';
     }
 */
-    public function loggado($userN){
+/*    public function loggado($userN){
         //redireciona para a página em que estava antes de logar mas agora com a sessão iniciada
         //$caminhoAbsoluto = $nomeDoProjecto.'view/inicio/about.php';
+        
         session_start();
         $_SESSION['username'] = $userN;
+        
         echo "<script>
                 window.location.href = 'index.php?op=gestor_tarefas'
              </script>";
@@ -88,7 +91,7 @@ class MainController {
         //$this->redirect('view/inicio/tela-inicial.php');
         //$this->redirect($caminhoAbsoluto);
     }
-    
+*/
     public function telaAbout(){
         include dirname(__DIR__, 1).'/view/inicio/about.php';
     }
@@ -110,13 +113,26 @@ class MainController {
             $password = isset($_POST['password']) ? filter_input(INPUT_POST, 'password') : NULL;
 
             try {
-                $this->visitanteService->criarNovoUtilizador($nome, $email, $username, $password);
-                //$this->redirect('../view/admin-view/admin-home.php');
-                $caminhoAbsoluto = $GLOBALS['nomeDoProjecto']./*$nomeDoProjecto.*/'/index.php?op=login';//&user='.$username;
-                
-                //depois de se cadastrar, ele loga logo sozinho, mas ao invés de ir para a tela inicial again, vou tentar que ele vá para a tela em que estava antes do cadastro
-                $this->redirect($caminhoAbsoluto);
-                return;
+                if($this->visitanteService->criarNovoUtilizador($nome, $email, $username, $password)){
+                    //$this->redirect('../view/admin-view/admin-home.php');
+                    echo "<script>
+                            alert('REGISTADO COM SUCESSO. AGORA FAÇA O LOGIN.');
+                            window.location.href = 'index.php?op=login';
+                        </script>";
+                    //$caminhoAbsoluto = $GLOBALS['nomeDoProjecto']./*$nomeDoProjecto.*/'/index.php?op=login';//&user='.$username;
+                    
+                    //depois de se cadastrar, ele loga logo sozinho, mas ao invés de ir para a tela inicial again, vou tentar que ele vá para a tela em que estava antes do cadastro
+                    //$this->redirect($caminhoAbsoluto);
+                    return;
+                }
+                else{
+                    /*event.preventDefault();
+                    window.location.href = 'index.php?op=registar';
+                    */
+                    echo "<script>
+                            alert('JÁ EXISTE ESSE UTILIZADOR!!!');
+                          </script>";
+                }
             } catch (ValidationException $e) {
                 $errors = $e->getErrors();
             }
@@ -149,7 +165,10 @@ class MainController {
                             //window.location.href = 'index.php?op=loginsucesso&username=".$userN."';
 //mas ao invés de meter o username na url, que é perigoso, devo usar uma variavel de sessão para lhe guardar, a ele e ao perfil
 //tipo assim: $_SESSION['username] = $userN; $_SESSION['perfil'] = $perfil. E assim estará no programa todo
-                    $this->redirect('index.php?op=loginsucesso&username='.$userN);
+                    session_start();
+                    $_SESSION['username'] = $userN;
+                    $_SESSION['email'] = $userN;
+                    $this->redirect('index.php?op=gestor_tarefas');
                 }
                 else{
                     //throw new Exception('Ocorreu um erro ao realizar o login.');

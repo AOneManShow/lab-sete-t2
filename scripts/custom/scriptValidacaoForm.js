@@ -25,15 +25,18 @@ function validarSenha() {
         codigoErro = "nenhum";
 
         // Verificar se o valor atende aos critérios de validação
-        if (senha !== '' && senhaConfirm !== '') {
-            if (senha !== senhaConfirm) {
-                mensagemErroPass.textContent = "Os campos de senha precisam corresponder.";
+        if (senha !== ''){
+            if(senhaConfirm !== '') {
+                if (senha !== senhaConfirm) {
+                    mensagemErroPass.textContent = "Os campos de senha precisam corresponder.";
+                    codigoErro = "senha";
+                }
+            }
+            if(senha.length < 5){
+                mensagemErroPass.textContent = 'A senha deve ter pelo menos 5 caracteres.';
                 codigoErro = "senha";
             }
-        }/*
-        else {
-            mensagemErro.textContent = '';
-        }*/
+        }
     }, 1000); // Atraso de 1 segundo
 }
 

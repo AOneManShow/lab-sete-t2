@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
+<?php
+require_once 'sidebar.php';
+?>
 
-<head>
-  <meta charset='utf-8'>
-  <title>Gestor de Tarefas</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" type="text/css" href="../content/css/custom/estilo.css">
-</head>
-
-<body class="bg-verde-pastoso">
   <div class="container">
     <div class="row g-4 bg-dark text-light m-5 text-center box-rounded">
       <h1 class="mt-4">Gestor de Tarefas</h1>
