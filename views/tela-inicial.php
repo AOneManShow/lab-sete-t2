@@ -468,7 +468,7 @@ include_once '../constantes/constantes.php';
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script type="text/javascript" src="../scripts/custom/scripts.js"></script>
+<script type="text/javascript" src="../scripts/custom/scriptTelaInicial.js"></script>
 
 </body>
 
