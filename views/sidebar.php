@@ -18,4 +18,7 @@ include '../sessions/session.php';
 </head>
 
 <body class="bg-verde-pastoso">
-    
+    <?php echo 'USER: ' . $_SESSION['username'];
+          echo '<br>EMAIL: ' . $_SESSION['email'];
+    ?>
+    <a href="<?php echo $GLOBALS['nomeDoProjecto'] . '/sessions/logout.php';?>" class="btn btn-primary"> Log out </a>

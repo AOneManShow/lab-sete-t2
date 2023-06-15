@@ -158,7 +158,8 @@ class MainController {
             $passwd = isset($_POST['password']) ? filter_input(INPUT_POST, 'password') : NULL;
 //getByUsername() e pegaria o username e o perfil para passar no window location href
             try {
-                if($this->visitanteService->logar($email, $userN, $passwd)){
+                $utilizador = $this->visitanteService->logar($email, $userN, $passwd);
+                if( isset($utilizador) && $utilizador !== false ){
                     echo "<script>
                             alert('ENTROUUUU!!!');
                          </script>";
@@ -166,8 +167,8 @@ class MainController {
 //mas ao invés de meter o username na url, que é perigoso, devo usar uma variavel de sessão para lhe guardar, a ele e ao perfil
 //tipo assim: $_SESSION['username] = $userN; $_SESSION['perfil'] = $perfil. E assim estará no programa todo
                     session_start();
-                    $_SESSION['username'] = $userN;
-                    $_SESSION['email'] = $userN;
+                    $_SESSION['username'] = $utilizador->getUsername();
+                    $_SESSION['email'] = $utilizador->getEmail();
                     $this->redirect('index.php?op=gestor_tarefas');
                 }
                 else{

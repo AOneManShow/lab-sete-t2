@@ -32,22 +32,6 @@ include_once './constantes/constantes.php';
                     aria-label="Toggle navigation">
                     <span data-feather="grid"></span>
                 </button>
-<!--
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary"
-                                href="<?= $GLOBALS['nomeDoProjecto'] . '/index.php?op=login'; ?>">
-                                <em data-feather="layout" width="18" height="18" class="mr-2"></em>
-                                Entrar
-                            </a>
-                        </li>
-                    </ul>
-                </div>
--->
             </nav>
         </div>
     </section>

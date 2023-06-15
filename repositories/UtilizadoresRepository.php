@@ -25,12 +25,11 @@ class UtilizadoresRepository
                     $cliente['contact_no'], $cliente['provincia'], $cliente['municipio'], $cliente['comuna'], $cliente['morada'], $cliente['nacionalidade'],
                     $cliente['username'], $cliente['password'], $cliente['perfil']);
             }
-            return $clientes;
+            return $utilizadores;
         }
         */
     public function selectById($id)
     {
-
         $stmt = $this->db->prepare("SELECT * FROM utilizador WHERE idUtilizador=:id");
         $stmt->execute(['id' => $id]);
         $utilizador = $stmt->fetch();
@@ -108,6 +107,14 @@ class UtilizadoresRepository
         }
     }
 
+    public function selectByUsername($userN){
+        $stmt = $this->db->prepare("SELECT * FROM utilizador WHERE username=:userN");
+        $stmt->execute(['userN' => $userN]);
+        $utilizador = $stmt->fetch();
+
+        return new Utilizador($utilizador['idUtilizador'], $utilizador['nomeCompleto'], $utilizador['email'], $utilizador['username'], $utilizador['senha']);
+    }
+
     public function login($email, $userN, $passwd)
     {
         try {
@@ -117,7 +124,7 @@ class UtilizadoresRepository
             $stmt->bindParam(":passwd", $passwd);
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
-                return true;
+                return $this->selectByUsername($userN);
             } else {
                 return false;
             }

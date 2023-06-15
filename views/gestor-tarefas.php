@@ -1,5 +1,5 @@
 <?php
-require_once 'sidebar.php';
+require 'sidebar.php';
 ?>
 
   <div class="container">
