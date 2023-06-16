@@ -1,5 +1,6 @@
 <?php
 if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_name("Gestor_Tarefas");
     session_start();
 }
 include_once '../constantes/constantes.php';
@@ -254,7 +255,9 @@ include '../sessions/session.php';
     <script src="../scripts/custom/hoverable-collapse.js"></script>
     <script src="../scripts/custom/misc.js"></script>
     <script src="../scripts/custom/settings.js"></script>
+    <script src="../scripts/custom/scriptTarefas.js"></script>
+    <!-- endinject 
     <script src="../scripts/custom/todolist.js"></script>
-    <!-- endinject -->
+-->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->

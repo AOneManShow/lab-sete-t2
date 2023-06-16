@@ -1,8 +1,13 @@
 <?php
 include './constantes/constantes.php';
-if( session_status() === PHP_SESSION_ACTIVE ){//status está sempre diferente de ACTIVE quando chega aqui
+if( session_status() !== PHP_SESSION_ACTIVE ){
+    session_name("Gestor_Tarefas");
+    session_start();
+}
+if( isset($_SESSION['username']) ){
     header("Location: " . $GLOBALS['nomeDoProjecto'] . '/index.php?op=gestor_tarefas');
-} //isso não funciona e tem alguma coisa a ver com o facto da tela de login ser incluída e não redirecionada
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-Br">

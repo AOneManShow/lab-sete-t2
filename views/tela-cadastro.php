@@ -1,5 +1,14 @@
 <?php
 include_once './constantes/constantes.php';
+if( session_status() !== PHP_SESSION_ACTIVE ){
+    session_name("Gestor_Tarefas");
+    session_start();
+}
+if( isset($_SESSION['username']) ){
+    echo "<script> alert('PRECISA FAZER LOGOUT ANTES DE REALIZAR ESSA OPERAÇÃO!!!'); </script>";
+    header("Location: " . $GLOBALS['nomeDoProjecto'] . '/index.php?op=gestor_tarefas');
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +39,7 @@ include_once './constantes/constantes.php';
                             <div class="mb-md-5 mt-md-4">
                                 <form id="formulario-cadastro" method="post">
                                     <h2 class="fw-bold mb-2 text-uppercase">Cadastro</h2>
-                                    <p class="text-white-50 mb-5">Insira os seus dados!</p>
+                                    <p class="text-white-50 mb-5">Insira os seus dados e torne-se parte da família GesTask!</p>
 
                                     <div class="form-outline form-white mb-4">
                                         <input type="text" id="nomeCompleto" name="nomeCompleto"

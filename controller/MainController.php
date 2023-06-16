@@ -77,21 +77,6 @@ class MainController {
         include dirname(__DIR__, 1).'/view/outdoor-view/outdoors-list.php';
     }
 */
-/*    public function loggado($userN){
-        //redireciona para a página em que estava antes de logar mas agora com a sessão iniciada
-        //$caminhoAbsoluto = $nomeDoProjecto.'view/inicio/about.php';
-        
-        session_start();
-        $_SESSION['username'] = $userN;
-        
-        echo "<script>
-                window.location.href = 'index.php?op=gestor_tarefas'
-             </script>";
-             //&username=".$userN."';
-        //$this->redirect('view/inicio/tela-inicial.php');
-        //$this->redirect($caminhoAbsoluto);
-    }
-*/
     public function telaAbout(){
         include dirname(__DIR__, 1).'/view/inicio/about.php';
     }
@@ -166,6 +151,7 @@ class MainController {
                             //window.location.href = 'index.php?op=loginsucesso&username=".$userN."';
 //mas ao invés de meter o username na url, que é perigoso, devo usar uma variavel de sessão para lhe guardar, a ele e ao perfil
 //tipo assim: $_SESSION['username] = $userN; $_SESSION['perfil'] = $perfil. E assim estará no programa todo
+                    session_name("Gestor_Tarefas");
                     session_start();
                     $_SESSION['username'] = $utilizador->getUsername();
                     $_SESSION['email'] = $utilizador->getEmail();
