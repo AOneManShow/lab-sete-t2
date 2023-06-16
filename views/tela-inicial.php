@@ -5,7 +5,7 @@ include_once '../constantes/constantes.php';
 <html lang="pt-br">
 
 <head>
-    <!-- Required meta tags -->
+    <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tela Inicial</title>
@@ -13,20 +13,20 @@ include_once '../constantes/constantes.php';
     <!--Inter UI font-->
     <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
 
-    <!--vendors styles-->
+    <!--estilo vendors-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
-    <!-- Bootstrap CSS / Color Scheme -->
+    <!-- Bootstrap CSS / Esquema de cores -->
     <link rel="stylesheet" href="<?= $GLOBALS['nomeDoProjecto'] . '/views/css/default.css'; ?>" id="theme-color">
 </head>
 
 <body>
 
-    <!--navigation-->
+    <!--nav bar-->
     <section class="smart-scroll">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-dark">
@@ -41,16 +41,10 @@ include_once '../constantes/constantes.php';
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#features">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                            <a class="nav-link page-scroll" href="#features">Recursos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="#faq">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#blog">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary"
@@ -70,10 +64,13 @@ include_once '../constantes/constantes.php';
         <div class="container">
             <div class="row vh-md-100">
                 <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
-                    <h1 class="heading-black text-capitalize">Quickly build landing pages with Knight</h1>
-                    <p class="lead py-3">Knight is a platform that helps freelancers and companies build beautiful
-                        landing
-                        pages in minutes. Inscreva-se gratuitamente.</p>
+                    <h1 class="heading-black text-capitalize">Gerencie suas tarefas diárias com o GesTask</h1>
+                    <p class="lead py-3">Nossa
+                        plataforma simplifica o processo, permitindo que você organize, acompanhe e colabore em
+                        projectos
+                        de forma intuitiva.
+                        Gratuitamente.
+                    </p>
                     <a href="<?= $GLOBALS['nomeDoProjecto'] . '/index.php?op=registar'; ?>">
                         <button class="btn btn-primary d-inline-flex flex-row align-items-center">
                             Increver-se agora
@@ -85,12 +82,12 @@ include_once '../constantes/constantes.php';
         </div>
     </section>
 
-    <!-- features section -->
+    <!-- recursos section -->
     <section class="pt-6 pb-7" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mx-auto text-center">
-                    <h2 class="heading-black">Knight offers everything you need.</h2>
+                    <h2 class="heading-black">GesTask oferece tudo o que você procura.</h2>
                     <p class="text-muted lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                         nisi
                         commodo, tempus odio a, vestibulum nibh.</p>
@@ -102,10 +99,10 @@ include_once '../constantes/constantes.php';
                         <div class="col-md-6 box">
                             <div class="icon-box box-primary">
                                 <div class="icon-box-inner">
-                                    <span data-feather="edit-3" width="35" height="35"></span>
+                                    <span data-feather="edit" width="35" height="35"></span>
                                 </div>
                             </div>
-                            <h5>Create once. Share everywhere.</h5>
+                            <h5>Crie, edite, conclua tarefas.</h5>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                                 nisi commodo, tempus odio a, vestibulum nibh.</p>
                         </div>
@@ -115,149 +112,31 @@ include_once '../constantes/constantes.php';
                                     <span data-feather="monitor" width="35" height="35"></span>
                                 </div>
                             </div>
-                            <h5>Unlimited devices</h5>
+                            <h5>Suporte em todos dispositivos</h5>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                                 nisi commodo, tempus odio a, vestibulum nibh.</p>
                         </div>
                         <div class="col-md-6 box">
                             <div class="icon-box box-danger">
                                 <div class="icon-box-inner">
-                                    <span data-feather="layout" width="35" height="35"></span>
+                                    <span data-feather="external-link" width="35" height="35"></span>
                                 </div>
                             </div>
-                            <h5>Beautiful tempates & layouts</h5>
+                            <h5>Colabore com quem quiser</h5>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                                 nisi commodo, tempus odio a, vestibulum nibh.</p>
                         </div>
                         <div class="col-md-6 box">
                             <div class="icon-box box-info">
                                 <div class="icon-box-inner">
-                                    <span data-feather="globe" width="35" height="35"></span>
+                                    <span data-feather="clock" width="35" height="35"></span>
                                 </div>
                             </div>
-                            <h5>Available globally</h5>
+                            <h5>Disponível a qualquer momento</h5>
                             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in
                                 nisi commodo, tempus odio a, vestibulum nibh.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row mt-6">
-                <div class="col-md-6 mr-auto">
-                    <h2>Knight is more than just a page builder.</h2>
-                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis pulvinar
-                        vestibulum. Donec eleifend, sem sed dictum mattis, turpis purus placerat eros.</p>
-                    <a href="#" class="btn btn-light">
-                        Try the live demo
-                    </a>
-                </div>
-                <div class="col-md-5">
-                    <div class="slick-about">
-                        <img src="../content/images/blog-1.jpg" class="img-fluid rounded d-block mx-auto"
-                            alt="Work 1" />
-                        <img src="../content/images/blog-2.jpg" class="img-fluid rounded d-block mx-auto"
-                            alt="Work 2" />
-                        <img src="../content/images/blog-3.jpg" class="img-fluid rounded d-block mx-auto"
-                            alt="Work 3" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--pricing section-->
-    <section class="py-7 bg-dark section-angle top-right bottom-right" id="pricing">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2 class="text-white heading-black">Choose your pricing plan.</h2>
-                    <p class="text-light lead">Simply pricing - 7 Days free trial</p>
-                </div>
-            </div>
-            <!--pricing tables-->
-            <div class="row pt-5 pricing-table">
-                <div class="col-12 mx-auto">
-                    <div class="card-deck pricing-table">
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Personal</h3>
-                                <h2 class="card-title text-primary mb-0 pt-4">$59</h2>
-                                <div class="text-muted font-weight-medium mt-2">per month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>1 user</li>
-                                    <li>10 websites</li>
-                                    <li>Access to premium templates</li>
-                                    <li>Basic support</li>
-                                </ul>
-                                <a href="#" class="btn btn-primary">
-                                    Start free trial
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Agency</h3>
-                                <h2 class="card-title text-info mb-0 pt-4">$159</h2>
-                                <div class="text-muted font-weight-medium mt-2">per month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>2-15 users</li>
-                                    <li>50 websites</li>
-                                    <li>Access to premium templates</li>
-                                    <li>Priority support</li>
-                                </ul>
-                                <a href="#" class="btn btn-info">
-                                    Start free trial
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="card-title pt-3">Enterprise</h3>
-                                <h2 class="card-title text-primary mb-0 pt-4">$499</h2>
-                                <div class="text-muted font-weight-medium mt-2">per month</div>
-                                <ul class="list-unstyled pricing-list">
-                                    <li>Unlimited users</li>
-                                    <li>Unlimited websites</li>
-                                    <li>Access to premium templates</li>
-                                    <li>24/7 support</li>
-                                </ul>
-                                <a href="#" class="btn btn-primary">
-                                    Start free trial
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-6">
-                <div class="col-md-4 mr-auto">
-                    <h3>Everything is covered.</h3>
-                    <p class="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in nisi commodo, tempus odio
-                        a,
-                        vestibulum nibh.
-                    </p>
-                </div>
-                <div class="col-md-7 offset-md-1">
-                    <ul class="features-list">
-                        <li>Weekly new templates</li>
-                        <li>Access to new features</li>
-                        <li>MailChimp integration</li>
-                        <li>Stripe integration</li>
-                        <li>100 refund guarantee</li>
-                        <li>Advance SEO tools</li>
-                        <li>Free unlimited support</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-8 col-12 divider top-divider mx-auto pt-5 text-center">
-                    <h3>Try Knight free for 7 days</h3>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in nisi commodo,
-                        tempus odio a, vestibulum nibh.</p>
-                    <button class="btn btn-primary">
-                        Create your account
-                    </button>
                 </div>
             </div>
         </div>
@@ -310,143 +189,28 @@ include_once '../constantes/constantes.php';
             </div>
             <div class="row mt-4">
                 <div class="col-md-6 mx-auto text-center">
-                    <h5 class="mb-4">Have questions?</h5>
-                    <a href="#" class="btn btn-primary">Contact us</a>
+                    <h5 class="mb-4">Tem dúvidas?</h5>
+                    <a href="#" class="btn btn-primary">Contacte-nos</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--news section-->
-    <section class="py-7 bg-dark section-angle top-left bottom-left" id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center">
-                    <h2 class="heading-black">News from Knight.</h2>
-                    <p class="text-muted lead">What's new at Knight.</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="../content/images/blog-1.jpg" alt="Blog 1">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>We launch new iOS & Android mobile apps</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">Sep 27, 2018</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="../content/images/blog-2.jpg" alt="Blog 2">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>New update is available for the editor</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">August 16, 2018</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#">
-                            <img class="card-img-top img-raised" src="../content/images/blog-3.jpg" alt="Blog 3">
-                        </a>
-                        <div class="card-body">
-                            <a href="#" class="card-title mb-2">
-                                <h5>The story of building #1 page builder</h5>
-                            </a>
-                            <p class="text-muted small-xl mb-2">December 2nd, 2017</p>
-                            <p class="card-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imper,
-                                consectetur adipiscing elit. <a href="#">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-6">
-                <div class="col-md-6 mx-auto text-center">
-                    <a href="#" class="btn btn-primary">View all posts</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!--footer-->
-    <footer class="py-6">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 mr-auto">
-                    <h5>About Knight</h5>
-                    <p class="text-muted">Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.
-                        Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.</p>
-                    <ul class="list-inline social social-sm">
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-google-plus"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href=""><i class="fa fa-dribbble"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Legal</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Refund policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Partner</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Refer a friend</a></li>
-                        <li><a href="#">Affiliates</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Help</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Log in</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 text-muted text-center small-xl">
-                    &copy; 2019 Knight - All Rights Reserved
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?= include_once './footer.php'; ?>
 
     <!--scroll to top-->
     <div class="scroll-top">
         <i class="fa fa-angle-up" aria-hidden="true"></i>
     </div>
 
-    <!-- theme switcher (FOR DEMO ONLY - REMOVE FROM PRODUCTION)-->
     <div class="switcher-wrap">
         <div class="switcher-trigger">
             <span class="fa fa-gear"></span>
         </div>
         <div class="color-switcher">
-            <h6>Color Switcher</h6>
+            <h6>Troca de cores</h6>
             <ul class="mt-3 clearfix">
                 <li class="bg-teal active" data-color="default" title="Default Teal"></li>
                 <li class="bg-purple" data-color="purple" title="Purple"></li>
@@ -459,11 +223,11 @@ include_once '../constantes/constantes.php';
                 <li class="bg-yellow" data-color="yellow" title="Yellow"></li>
                 <li class="bg-pink" data-color="pink" title="Pink"></li>
             </ul>
-            <p>These are just demo colors. You can <b>easily</b> create your own color scheme.</p>
+            <p>Escolha uma cor e veja o resultado.</p>
         </div>
     </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS 
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS 
 -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

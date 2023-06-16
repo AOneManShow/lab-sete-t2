@@ -39,14 +39,12 @@ include '../sessions/session.php';
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/logo.svg"
-                        alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img
-                        src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo text-success" href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php';?>">GESTASK</a>
+                <a class="sidebar-brand brand-logo-mini text-success" href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php';?>">GT</a>
             </div>
             <ul class="nav">
                 <li class="nav-item nav-category">
-                    <span class="nav-link">Navigation</span>
+                    <span class="nav-link">Navegação</span>
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
@@ -54,17 +52,17 @@ include '../sessions/session.php';
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
-                        <span class="menu-title">Basic UI Elements</span>
+                        <span class="menu-title">Tarefas</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"> <a class="nav-link"
-                                    href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                                    href="#">Categoria 1</a></li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                                    href="#">Categoria 2</a></li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="../../pages/ui-features/typography.html">Typography</a>
+                                    href="#">Categoria 3</a>
                             </li>
                         </ul>
                     </div>
@@ -72,17 +70,9 @@ include '../sessions/session.php';
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="#">
                         <span class="menu-icon">
-                            <i class="mdi mdi-playlist-play"></i>
-                        </span>
-                        <span class="menu-title">Form Elements</span>
-                    </a>
-                </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="#">
-                        <span class="menu-icon">
                             <i class="mdi mdi-contacts"></i>
                         </span>
-                        <span class="menu-title">Icons</span>
+                        <span class="menu-title">Membros</span>
                     </a>
                 </li>
             </ul>
@@ -103,7 +93,7 @@ include '../sessions/session.php';
                                     <h4 class="card-title">Tarefas</h4>
                                     <div class="add-items d-flex">
                                         <input type="text" class="form-control todo-list-input"
-                                            placeholder="enter task..">
+                                            placeholder="Nova tarefa...">
                                         <button class="add btn btn-primary todo-list-add-btn">Adicionar</button>
                                     </div>
                                     <div class="list-wrapper">
