@@ -16,8 +16,8 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown"
-                        data-toggle="dropdown" aria-expanded="false" href="#">+ Novo Projecto</a>
+                    <a class="nav-link btn btn-success create-new-button" id="criarCategoria"
+                        data-toggle="dropdown" aria-expanded="false" href="#">+ Nova Categoria</a>
                 </li>
                 <li class="nav-item dropdown border-left">
                     <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#"

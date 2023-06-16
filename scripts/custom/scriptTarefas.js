@@ -32,3 +32,26 @@
   
     });
   })(jQuery);
+/*
+  function addCategorias(){
+    var corpo = document.getElementById("corpo_documento");
+    corpo.append(""
+    +"<div class='col-md-12 col-xl-4 grid-margin stretch-card'>"
+      +"<div class='card'>"
+        +"<div class='card-body'>"
+          +"<h4 class='card-title'>Categoria Dinâmica</h4>"
+          +"<div class='add-items d-flex'>"
+            +"<input type='text' class='form-control todo-list-input' placeholder='Nova tarefa...'>"
+            +"<button class='add btn btn-primary todo-list-add-btn'>Adicionar</button>"
+          +"</div>"
+          +"<div class='list-wrapper'>"
+            +"<ul class='d-flex flex-column-reverse text-white todo-list todo-list-custom'></ul>"
+          +"</div>"
+        +"</div>"
+      +"</div>"
+    +"</div>"
+    );
+  }
+  var botaoAddCat = document.getElementById("criarCategoria");
+  botaoAddCat.addEventListener("click", addCategorias);
+  */

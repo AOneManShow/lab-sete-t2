@@ -40,8 +40,10 @@ include '../sessions/session.php';
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo text-success" href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php';?>">GESTASK</a>
-                <a class="sidebar-brand brand-logo-mini text-success" href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php';?>">GT</a>
+                <a class="sidebar-brand brand-logo text-success"
+                    href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php'; ?>">GESTASK</a>
+                <a class="sidebar-brand brand-logo-mini text-success"
+                    href="<?php echo $GLOBALS['nomeDoProjecto'] . '/index.php'; ?>">GT</a>
             </div>
             <ul class="nav">
                 <li class="nav-item nav-category">
@@ -53,17 +55,14 @@ include '../sessions/session.php';
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
-                        <span class="menu-title">Tarefas</span>
+                        <span class="menu-title">Categorias</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="#">Categoria 1</a></li>
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="#">Categoria 2</a></li>
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="#">Categoria 3</a>
+                            <li class="nav-item"> <a class="nav-link" href="#">Categoria 1</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">Categoria 2</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">Categoria 3</a>
                             </li>
                         </ul>
                     </div>
@@ -87,11 +86,11 @@ include '../sessions/session.php';
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="row">
+                    <div id="corpo_documento" class="row">
                         <div class="col-md-12 col-xl-4 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Tarefas</h4>
+                                    <h4 class="card-title">Categoria</h4>
                                     <div class="add-items d-flex">
                                         <input type="text" class="form-control todo-list-input"
                                             placeholder="Nova tarefa...">
@@ -140,6 +139,38 @@ include '../sessions/session.php';
                                                 <i class="remove mdi mdi-close-box"></i>
                                             </li>
                                         -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Outra Categoria</h4>
+                                    <div class="add-items d-flex">
+                                        <input type="text" class="form-control todo-list-input"
+                                            placeholder="Nova tarefa...">
+                                        <button class="add btn btn-primary todo-list-add-btn">Adicionar</button>
+                                    </div>
+                                    <div class="list-wrapper">
+                                        <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xl-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Outra Categoria</h4>
+                                    <div class="add-items d-flex">
+                                        <input type="text" class="form-control todo-list-input"
+                                            placeholder="Nova tarefa...">
+                                        <button class="add btn btn-primary todo-list-add-btn">Adicionar</button>
+                                    </div>
+                                    <div class="list-wrapper">
+                                        <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
                                         </ul>
                                     </div>
                                 </div>
