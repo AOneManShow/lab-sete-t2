@@ -1,13 +1,13 @@
 <?php
 require 'sidebar.php';
 ?>
-
+<!--
   <div class="container">
     <div class="row g-4 bg-dark text-light m-5 text-center box-rounded">
       <h1 class="mt-4">Gestor de Tarefas</h1>
       <h2>Adicionar/Editar Tarefa</h2>
 
-      <!-- Formulário para adicionar ou editar uma tarefa -->
+      <!-- Formulário para adicionar ou editar uma tarefa --
       <div class="mt-4 d-flex justify-content-center">
         <form id="taskForm">
           <div class="row g-1 ps-5 pe-5 ms-5 me-5 d-flex justify-content-center">
@@ -60,14 +60,18 @@ require 'sidebar.php';
       </div>
     </div>
 
-    <!-- Lista de tarefas -->
+    <!-- Lista de tarefas --
     <div class="mt-4 mb-4">
       <h2 hidden>Tarefas</h2>
       <ul id="taskList" class="list-group">
-        <!-- As tarefas serão adicionadas dinamicamente aqui -->
+        <!-- As tarefas serão adicionadas dinamicamente aqui --
       </ul>
     </div>
   </div>
+-->
+
+
+  <!--
   <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -104,7 +108,7 @@ require 'sidebar.php';
 
                   <button type="submit" id="submitButton" class="btn btn-success text-light"><i class="fas fa-plus"></i>
                     Adicionar</button>
-                  <!-- <input type="hidden" name="form-logged" value="1" /> -->
+                  <!-- <input type="hidden" name="form-logged" value="1" /> --
                 </form>
 
               </div>
@@ -114,12 +118,10 @@ require 'sidebar.php';
       </div>
     </div>
   </section>
+-->
 
   <script src="../scripts/custom/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
     integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
-
-</html>

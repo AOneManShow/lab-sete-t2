@@ -169,6 +169,7 @@ class MainController {
                     session_start();
                     $_SESSION['username'] = $utilizador->getUsername();
                     $_SESSION['email'] = $utilizador->getEmail();
+                    $_SESSION['nome'] = $utilizador->getNomeCompleto();
                     $this->redirect('index.php?op=gestor_tarefas');
                 }
                 else{

@@ -3,5 +3,5 @@
         header("Location: " . $GLOBALS['nomeDoProjecto'] . '/index.php?op=login');
     }
     else{
-        echo 'AAAAAAAAAAA';
+        //echo 'AAAAAAAAAAA';
     }
