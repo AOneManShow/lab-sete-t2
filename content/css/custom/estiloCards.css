@@ -1,0 +1,35 @@
+
+.card {
+    position: relative;
+}
+
+#dropdownMenu {
+    position: absolute;
+    left: 90%;
+    top: 20px;
+}
+
+#dropdownToggle {
+    font-size: 1.125rem;
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+#dropdownToggle::after {
+    border: none;
+}
+
+.dropdown-menu {
+    display: none;
+    /* Oculta o menu dropdown */
+}
+
+.dropdown-menu.show {
+    display: block;
+    /* Mostra o menu dropdown ao ser ativado */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+}

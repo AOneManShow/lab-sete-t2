@@ -7,16 +7,9 @@
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-menu"></span>
             </button>
-            <ul class="navbar-nav w-100">
-                <li class="nav-item w-100">
-                    <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                        <input type="text" class="form-control" placeholder="Procurar tarefas">
-                    </form>
-                </li>
-            </ul>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link btn btn-success create-new-button" id="criarCategoria"
+                    <a class="nav-link btn btn-success create-new-button" id="btnCriarCategoria"
                         data-toggle="dropdown" aria-expanded="false" href="#">+ Nova Categoria</a>
                 </li>
                 <li class="nav-item dropdown border-left">

@@ -1,5 +1,5 @@
 <?php
-require 'sidebar.php';
+require 'gestor.php';
 ?>
 
   <div class="container">
