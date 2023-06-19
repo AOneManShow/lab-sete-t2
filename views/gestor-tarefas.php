@@ -6,7 +6,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 include_once '../constantes/constantes.php';
 include '../sessions/session.php';
 ?>
-<html>
 
 <head>
     <meta charset='utf-8'>

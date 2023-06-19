@@ -1,16 +1,13 @@
 <?php
 include_once './constantes/constantes.php';
 require_once './services/UtilizadoresServices.php';
-//require_once './services/OutdoorsServices.php';
 
 class MainController {
 
     private $visitanteService = NULL;
-//    private $outdoorService = NULL;
 
     public function __construct() {
         $this->visitanteService = new UtilizadoresServices();
-//        $this->outdoorService = new OutdoorsServices();
     }
 
     public function redirect($location) {
@@ -26,25 +23,13 @@ class MainController {
         try {
             if (!$op || $op == 'inicio') {
                 $this->telaInicial();
-            }/*
-            else if ($op == 'list') {
-                $this->listOutdoors();
-            }*/
-            else if ($op == 'registar') {
+            } else if ($op == 'registar') {
                 $this->registarUtilizador();
-            }/*
-            else if ($op == 'about') {
-                $this->telaAbout(); //método que traz a tela about no início
-            }*/ else if ($op == 'gestor_tarefas') {
+            } else if ($op == 'gestor_tarefas') {
                 $this->gestTask();
             } else if ($op == 'login') {
                 $this->login();
-            }/* else if ($op == 'loginsucesso') {
-                $filterUser = filter_input(INPUT_GET, 'username');
-                $userN = isset($filterUser) ? $filterUser : NULL;
-                $this->loggado($userN);
-            }*/
-             else {
+            } else {
                 $this->showError("Page not found", "Page for operation " . $op . " was not found!");
             }
         } catch (Exception $e) {
@@ -52,13 +37,6 @@ class MainController {
             $this->showError("Application error", $e->getMessage());
         }
     }
-/*
-    public function telaInicial(){
-        $this->redirect('view/inicio/tela-inicial.php');
-    } 
- */
-    //pesquisarOutdoors()
-    //login()
 
     public function telaInicial(){
         $caminhoAbsoluto = /*$GLOBALS['nomeDoProjecto'].*/'views/tela-inicial.php';
@@ -99,15 +77,10 @@ class MainController {
 
             try {
                 if($this->visitanteService->criarNovoUtilizador($nome, $email, $username, $password)){
-                    //$this->redirect('../view/admin-view/admin-home.php');
                     echo "<script>
                             alert('REGISTADO COM SUCESSO. AGORA FAÇA O LOGIN.');
                             window.location.href = 'index.php?op=login';
                         </script>";
-                    //$caminhoAbsoluto = $GLOBALS['nomeDoProjecto']./*$nomeDoProjecto.*/'/index.php?op=login';//&user='.$username;
-                    
-                    //depois de se cadastrar, ele loga logo sozinho, mas ao invés de ir para a tela inicial again, vou tentar que ele vá para a tela em que estava antes do cadastro
-                    //$this->redirect($caminhoAbsoluto);
                     return;
                 }
                 else{
@@ -145,12 +118,6 @@ class MainController {
             try {
                 $utilizador = $this->visitanteService->logar($email, $userN, $passwd);
                 if( isset($utilizador) && $utilizador !== false ){
-                    echo "<script>
-                            alert('ENTROUUUU!!!');
-                         </script>";
-                            //window.location.href = 'index.php?op=loginsucesso&username=".$userN."';
-//mas ao invés de meter o username na url, que é perigoso, devo usar uma variavel de sessão para lhe guardar, a ele e ao perfil
-//tipo assim: $_SESSION['username] = $userN; $_SESSION['perfil'] = $perfil. E assim estará no programa todo
                     session_name("Gestor_Tarefas");
                     session_start();
                     $_SESSION['username'] = $utilizador->getUsername();
