@@ -3,15 +3,15 @@
           {
               name: 'Trabalho',
               tasks: [
-                  { name: 'Fazer relatório', completed: false },
-                  { name: 'Enviar e-mails', completed: true }
+                  { name: 'Fazer relatório', descricao: '', completed: false },
+                  { name: 'Enviar e-mails', descricao: '', completed: true }
               ]
           },
           {
               name: 'Casa',
               tasks: [
-                  { name: 'Limpar cozinha', completed: false },
-                  { name: 'Lavar roupa', completed: false }
+                  { name: 'Limpar cozinha', descricao: '', completed: false },
+                  { name: 'Lavar roupa', descricao: '', completed: false }
               ]
           }
       ];
@@ -77,14 +77,24 @@
                       toggleTaskCompleted(categoryIndex, index);
                   });
                   const taskNameLabel = document.createElement('label');
+                  taskNameLabel.setAttribute('id', `labelNomeTarefa`);
                   taskNameLabel.classList.add('form-check-label', 'form-check-item');
                   taskNameLabel.textContent = task.name;
+                  taskNameLabel.addEventListener('click', () => {
+                      openEditTaskModal(categoryIndex, index);
+                  });
 
                   const deleteIcon = document.createElement('i');
                   deleteIcon.classList.add('mdi', 'remove', 'mdi-close-circle-outline');
                   deleteIcon.addEventListener('click', () => {
                       deleteTask(categoryIndex, index);
                   });
+
+                  // Função para excluir uma tarefa
+                  function deleteTask(categoryIndex, taskIndex) {
+                      categories[categoryIndex].tasks.splice(taskIndex, 1);
+                      renderCards();
+                  }
 
                   checkboxLabel.appendChild(checkbox);
                   formCheck.appendChild(checkboxLabel);
@@ -135,7 +145,7 @@
           editItem.setAttribute('href', '#');
           editItem.innerHTML = 'Editar Nome';
           editItem.addEventListener('click', () => {
-              editCategoryName(categoryIndex);
+              openEditCategoryModal(categoryIndex);
           });
 
           const deleteItem = document.createElement('a');
@@ -158,7 +168,8 @@
       // Função para adicionar uma nova tarefa
       function addTask(categoryIndex, taskName) {
           if (taskName) {
-              categories[categoryIndex].tasks.push({ name: taskName, completed: false });
+              const tarefa = { name: taskName, descricao: 'A', completed: false };
+              categories[categoryIndex].tasks.push(tarefa);
               renderCards();
           }
       }
@@ -169,19 +180,95 @@
           renderCards();
       }
 
-      // Função para excluir uma tarefa
-      function deleteTask(categoryIndex, taskIndex) {
-          categories[categoryIndex].tasks.splice(taskIndex, 1);
-          renderCards();
-      }
+      // Função para abrir o modal de edição de tarefa
+      function openEditTaskModal(categoryIndex, taskIndex) {
+          const task = categories[categoryIndex].tasks[taskIndex];
+          const modal = document.getElementById('editTaskModal');
 
-      // Função para editar o nome da categoria
-      function editCategoryName(categoryIndex) {
-          const newName = prompt('Digite o novo nome da categoria:');
-          if (newName) {
-              categories[categoryIndex].name = newName;
+          // Define os dados da tarefa no conteúdo do modal
+          const taskNameInput = modal.querySelector('#taskNameInput');
+          taskNameInput.value = task.name;
+          const taskDescricaoTextArea = modal.querySelector('#taskDescriptionTextarea');
+          taskDescricaoTextArea.value = task.descricao;
+          const taskCompletedField = task.completed;
+
+          const saveButton = modal.querySelector('#editTask');
+          saveButton.addEventListener('click', () => {
+              const tarefaEditada = { name: taskNameInput.value, descricao: taskDescricaoTextArea.value, completed: taskCompletedField };
+              //const newTaskName = taskNameInput.value;
+              //editTaskName(categoryIndex, taskIndex, newTaskName);
+              editTaskName(categoryIndex, taskIndex, tarefaEditada);
+              bootstrapModal.hide();
+          });
+
+          // Função para editar o nome da tarefa
+          function editTaskName(categoryIndex, taskIndex, tarefaEditada) {
+              categories[categoryIndex].tasks[taskIndex] = tarefaEditada;
               renderCards();
           }
+
+          // Abre o modal
+          const bootstrapModal = new bootstrap.Modal(modal);
+          bootstrapModal.show();
+      }
+
+      // Função para chamar o modal para editar categoria
+      function openEditCategoryModal(categoryIndex) {
+          const modal = document.getElementById('editCategoryModal');
+
+          // Define os dados da categoria no conteúdo do modal
+          const categoryNameInput = modal.querySelector('#categoryNameInput');
+          categoryNameInput.value = categories[categoryIndex].name;
+
+          const saveButton = modal.querySelector('#editCategory');
+          saveButton.addEventListener('click', () => {
+              const newCategoryName = categoryNameInput.value;
+              editCategoryName(categoryIndex, newCategoryName);
+              bootstrapModal.hide();
+          });
+
+          // Função para editar o nome da categoria
+          function editCategoryName(categoryIndex, newCategoryName) {
+              categories[categoryIndex].name = newCategoryName;
+              renderCards();
+          }
+
+          // Abre o modal
+          const bootstrapModal = new bootstrap.Modal(modal);
+          bootstrapModal.show();
+      }
+
+      // Função para chamar o modal para adicionar categoria
+      function openAddCategoryModal(nomeCategoria) {
+          const modal = document.getElementById('addCategoryModal');
+
+          // Define os dados da categoria no conteúdo do modal
+          const categoryNameInput = modal.querySelector('#categoryNameInput');
+
+          const saveButton = modal.querySelector('#addCategory');
+          saveButton.addEventListener('click', () => {
+              const newCategoryName = categoryNameInput.value;
+              addCategory(newCategoryName);
+              bootstrapModal.hide();
+          });
+
+          // Função para adicionar uma nova categoria
+          function addCategory(newCategoryName) {
+              //const newCategoryName = prompt('Digite o nome da nova categoria:');
+              if (newCategoryName) {
+                  const newCategory = {
+                      name: newCategoryName,
+                      tasks: []
+                  };
+                  categories.push(newCategory);
+                  renderCards();
+              }
+          }
+
+          // Abre o modal
+          const bootstrapModal = new bootstrap.Modal(modal);
+          bootstrapModal.show();
+
       }
 
       // Função para excluir uma categoria
@@ -190,22 +277,9 @@
           renderCards();
       }
 
-      // Função para adicionar uma nova categoria
-      function addCategory() {
-          const newCategoryName = prompt('Digite o nome da nova categoria:');
-          if (newCategoryName) {
-              const newCategory = {
-                  name: newCategoryName,
-                  tasks: []
-              };
-              categories.push(newCategory);
-              renderCards();
-          }
-      }
-
       // Event listener para o botão de criar categoria
       const btnCriarCategoria = document.getElementById('btnCriarCategoria');
-      btnCriarCategoria.addEventListener('click', addCategory);
+      btnCriarCategoria.addEventListener('click', openAddCategoryModal);
 
       // Renderiza os cards iniciais
       renderCards();
