@@ -7451,7 +7451,7 @@ a.text-primary:focus,
 
 .text-secondary,
 .list-wrapper .remove {
-  color: #e4eaec !important;
+  color: white !important;
 }
 
 a.text-secondary:hover,
@@ -9633,6 +9633,10 @@ div.tagsinput {
   height: 1.25rem;
   line-height: 20px;
   text-align: center;
+}
+
+.list-wrapper .remove:hover {
+  color: red !important;
 }
 
 .list-wrapper .completed {

@@ -42,3 +42,11 @@ textarea {
 #labelNomeTarefa{
     cursor: pointer;
 }
+
+.darker-hovered{
+    transition: color 0.3 ease;
+}
+
+.darker-hovered:hover{
+    color: lightblue;
+}
