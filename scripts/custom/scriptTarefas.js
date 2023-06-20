@@ -169,7 +169,7 @@ function createDropdownMenu(categoryIndex) {
 // Função para adicionar uma nova tarefa
 function addTask(categoryIndex, taskName) {
   if (taskName) {
-    const tarefa = { name: taskName, descricao: 'A', completed: false };
+    const tarefa = { name: taskName, descricao: '', completed: false };
     categories[categoryIndex].tasks.push(tarefa);
     renderCards();
   }
