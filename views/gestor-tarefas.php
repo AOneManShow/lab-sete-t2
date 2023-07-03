@@ -32,17 +32,17 @@ include '../sessions/session.php';
 
 <body>
     <div class="container-scroller">
-        <?= require_once './sidebar.php'; ?>
+        <?php require_once './sidebar.php'; ?>
         <div class="container-fluid page-body-wrapper">
-            <?= require_once './navbar.php'; ?>
+            <?php require_once './navbar.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div id="corpo_documento" class="row">
                     </div>
                 </div>
-                <?= include './modals/modalEditarTarefa.php'; ?>
-                <?= include './modals/modalEditarCategoria.php'; ?>
-                <?= include './modals/modalAddCategoria.php'; ?>
+                <?php include './modals/modalEditarTarefa.php'; ?>
+                <?php include './modals/modalEditarCategoria.php'; ?>
+                <?php include './modals/modalAddCategoria.php'; ?>
             </div>
         </div>
     </div>

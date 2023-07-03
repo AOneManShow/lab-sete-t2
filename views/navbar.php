@@ -28,7 +28,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                     <div class="navbar-profile">
-                        <img class="img-xs rounded-circle" src="../content/images/pic-8.png" alt="">
+                        <img class="img-xs rounded-circle" src="<?= "https://api.dicebear.com/6.x/initials/svg?seed=".$_SESSION['nome'] ?>" alt="Initials_Image">
+                        <!--
+                            <img class="img-xs rounded-circle" src="../content/images/pic-8.png" alt="">
+                        -->
                         <p class="mb-0 d-none d-sm-block navbar-profile-name">
                             <?= $_SESSION['nome']; ?>
                         </p>

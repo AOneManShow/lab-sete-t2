@@ -198,7 +198,7 @@ include_once '../constantes/constantes.php';
 
 
     <!--footer-->
-    <?= include_once './footer.php'; ?>
+    <?php include_once './footer.php'; ?>
 
     <!--scroll to top-->
     <div class="scroll-top">
